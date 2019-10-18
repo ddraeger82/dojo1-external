@@ -1,0 +1,16 @@
+<html>
+    <body>
+        <h1 id="greeting">Hello</h1>
+        <!-- load Dojo -->
+        <script src="dojoConfig.js"></script>
+        <script src="js/lib/dojo.js"></script>
+
+        <script>
+            require(["dojo/dom", "dojo/dom-construct", "app/greeting"], function(dom, domConstruct, widget) {
+                var greetingNode = dom.byId("greeting");
+                var who = widget.setReceiver("SitePen");
+                domConstruct.place("<em> " + who + "!</em>", greetingNode);
+            });
+        </script>
+    </body>
+</html>
